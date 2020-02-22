@@ -1,0 +1,11 @@
+export POSTGRESS_USERNAME=udagramaizulhdev;
+export POSTGRESS_PASSWORD=udagramaizulhdev;
+export POSTGRESS_DB=udagram;
+export POSTGRESS_HOST=udagramaizulhdev.caobhhtwxeu2.ap-southeast-1.rds.amazonaws.com;
+export AWS_REGION=ap-southeast-1;
+export AWS_PROFILE=default;
+export AWS_BUCKET=udagram-aizulhos-dev;
+export JWT_SECRET=helloworld;
+
+psql -U udagramaizulhdev -h udagramaizulhdev.caobhhtwxeu2.ap-southeast-1.rds.amazonaws.com -p 5432 udagram
+docker run --rm --publish 8080:8080 -v $HOME/.aws:/root/.aws --env POSTGRESS_HOST=$POSTGRESS_HOST --env POSTGRESS_USERNAME=$POSTGRESS_USERNAME --env POSTGRESS_PASSWORD=$POSTGRESS_PASSWORD --env POSTGRESS_DB=$POSTGRESS_DB --env AWS_REGION=$AWS_REGION --env AWS_PROFILE=$AWS_PROFILE --env AWS_BUCKET=$AWS_BUCKET --env JWT_SECRET=$JWT_SECRET --name feed aizulhussin/udacity-restapi-feed
