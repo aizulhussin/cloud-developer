@@ -8,6 +8,10 @@ const router: Router = Router();
 router.use('/auth', AuthRouter);
 
 router.get('/', async (req: Request, res: Response) => {
+    res.send("root")
+});
+
+router.get('/test', async (req: Request, res: Response) => {
     res.send("user API")
 });
 
