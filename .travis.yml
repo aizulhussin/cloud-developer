@@ -15,6 +15,7 @@ before_install:
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
   - export KUBECONFIG=course-03/udacity-c3-deployment/k8s/udagram-cluster-kubeconfig
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
 
 
