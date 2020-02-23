@@ -14,12 +14,16 @@ before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
-  - export KUBECONFIG=export KUBECONFIG=course-03/udacity-c3-deployment/k8s/aho-kubeconfig
+  - export KUBECONFIG=course-03/udacity-c3-deployment/k8s/aho-kubeconfig
 
 
 
 install:
   - docker-compose -f course-03/udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
+  - kubectl apply -f course-03/udacity-c3-deployment/k8s/aws-secret.yaml
+  - kubectl apply -f course-03/udacity-c3-deployment/k8s/env-configmap.yaml
+  - kubectl apply -f course-03/udacity-c3-deployment/k8s/env-secret.yaml
+  - kubectl apply -f course-03/udacity-c3-deployment/k8s/reverseproxy-deployment.yaml
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/reverseproxy-deployment.yaml
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/backend-feed-deployment.yaml
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/backend-user-deployment.yaml
