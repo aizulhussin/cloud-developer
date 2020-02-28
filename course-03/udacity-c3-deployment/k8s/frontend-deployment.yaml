@@ -2,18 +2,18 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    service: frontend
-  name: frontend
+    service: frontend-b
+  name: frontend-b
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        service: frontend
+        service: frontend-b
         api: external        
     spec:
       containers:
-      - image: aizulhussin/udacity-frontend:v3
+      - image: aizulhussin/udacity-frontend:v4
         name: frontend
         imagePullPolicy: Always          
         ports:
