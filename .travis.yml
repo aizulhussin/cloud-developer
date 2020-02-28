@@ -23,7 +23,7 @@ install:
   - docker push aizulhussin/udacity-restapi-feed:v3
   - docker push aizulhussin/udacity-restapi-user:v3
   - docker push aizulhussin/reverseproxy
-  - docker push aizulhussin/udacity-frontend:v3
+  - docker push aizulhussin/udacity-frontend:v4
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/aws-secret.yaml
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/env-configmap.yaml
   - kubectl apply -f course-03/udacity-c3-deployment/k8s/env-secret.yaml
