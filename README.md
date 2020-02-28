@@ -9,6 +9,8 @@
 3. NodeJS v10.X
 4. NPM
 5. Travis CI account linked to your GitHub repository
+6. AWS Account
+7. A domain for Route 53 A/B deployment setup
 
 # Application Components
 
@@ -35,5 +37,7 @@
 1. Configure frontend-service as a LoadBalancer.
 2. Do steps under How To Deploy (refer above section)
 3. The routing to A or B environment is controlled by AWS Route 53 using 50-50 weightage rule.
-3. Go to http://udagram-c3.cikooapps.com:8100
+4. Ensure that you have setup a domain under Route 53.
+5. Create 2 recordsets where each recordset pointing to the frontend LoadBalancer service External-IP. You can get it from kubectl get svc output.
+3. Go to http://<your-domain>:8100
 4. Currently both A and B environment is differentiated by their Menu Bar title. For A environment menu title is Menus and B environment menu title is Menu B
