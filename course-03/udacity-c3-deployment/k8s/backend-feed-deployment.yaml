@@ -1,3 +1,5 @@
+#For A/B Deployments please ensure to set labels.service, labels.name,spec.template.metadata.labels.service to a value that can help you distinguish the pods
+#Please also ensure container image is set to the updated version / tag
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:

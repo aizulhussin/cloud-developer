@@ -20,14 +20,14 @@
 # Deployment Setup
 
 1. Each components is repsented by a Service configuration and Deployment configuration files. 
-2. The files can be be located under udacity-c3-deployment/k8s folder.The files are - *-service.yaml and *-deployment.yaml
+2. The files can be be located under course-03/udacity-c3-deployment/k8s folder.The files are - *-service.yaml and *-deployment.yaml
 3. You also need to ensure the configuration for aws-secret, env-configmap and env-secret is also set.
 
 
 # How to Build and Deploy
 1. Build and Deployment is handled by CI / CD pipeline on Travis CI and is triggered by performing Git Push.
 2. Before that please ensure that you updated the tag/version number for docker images, service inside docker-compose-build.yaml, *-service.yaml and *-deployment.yaml files.
-3. The docker-compose-build.yaml can be found under udacity-c3-deployment/docker folder.
+3. The docker-compose-build.yaml can be found under course-03/udacity-c3-deployment/docker folder.
 4. Once the version is set, you may perform Git add, commit and push.
 5. The deployment strategy is RollingUpdate. You may view the pods status using command kubectl get pods.
 

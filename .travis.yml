@@ -4,7 +4,7 @@ services: docker
 
 env:
   - DOCKER_COMPOSE_VERSION=1.23.2
-
+#setup docker,kubectl,docker-compose and docker login
 before_install:
   - docker -v && docker-compose -v
   - sudo rm /usr/local/bin/docker-compose
@@ -17,7 +17,7 @@ before_install:
   - export KUBECONFIG=course-03/udacity-c3-deployment/k8s/udagram-cluster-kubeconfig
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 
-
+#build docker images, push images to dockerhub,and install/update kubernetes resources
 install:
   - docker-compose -f course-03/udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
   - docker push aizulhussin/udacity-restapi-feed:v3

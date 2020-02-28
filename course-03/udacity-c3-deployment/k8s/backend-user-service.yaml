@@ -1,3 +1,4 @@
+#For A/B Deployments please ensure to set metadata.labels.service, metadata.labels.name,spec.selector.service to a value that can help you distinguish the pods
 apiVersion: v1
 kind: Service
 metadata:
