@@ -39,5 +39,5 @@
 3. The routing to A or B environment is controlled by AWS Route 53 using 50-50 weightage rule.
 4. Ensure that you have setup a domain under Route 53.
 5. Create 2 recordsets where each recordset pointing to the frontend LoadBalancer service External-IP. You can get it from kubectl get svc output.
-3. Go to http://<your-domain>:8100
+3. Go to http://your-domain:8100
 4. Currently both A and B environment is differentiated by their Menu Bar title. For A environment menu title is Menus and B environment menu title is Menu B
