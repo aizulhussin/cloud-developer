@@ -1,4 +1,3 @@
-# Refactor Udagram App into Microservices and Deploy
 # Project : Refactor Udagram app into Microservices and Deploy
 
 # Pre Requisites
